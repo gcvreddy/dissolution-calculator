@@ -1,0 +1,167 @@
+﻿ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple Interest Calculator</title>
+ <style>
+ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap');
+ 
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito',sans-serif;
+  }
+body {
+    background-color: #ff4c29;
+
+}
+ 
+
+.calculator {
+  width: 350px;
+  height: 570px;
+  background-color:purple;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  border-radius:10px;
+  box-shadow: 5px 5px 10px rgba(0,0 0, 0, 0.5);
+  text-align: center;
+  padding: 20px 0px;
+  color:white;
+  margin-top:10px;
+}
+
+h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+
+}
+ 
+input{
+width: 150px;
+height: 30px;
+padding: 5px;
+margin: 5px;
+border: none;
+outline: none;
+border-radius: 5px;
+}
+button {
+font-size: 18px;
+width: 150px;
+height: 40px;
+border-radius: 5px;
+border: none;
+color:#082032;
+background-color:red;
+font-weight: 999;
+}
+p {
+
+color: white;
+margin-top: 20px;
+
+}
+ 
+
+
+
+</style>
+</head>
+
+<body bgcolor="aqua">
+
+   <div class="calculator">
+
+    <h6>GCVR<h6>
+
+    <h2>Dissolution Calculator for tablets </h2>
+     
+     <h5> At/As * Ws /100 * 5/50 * 900/1 * 25/5 * P/100 * 100/L  </h5>
+
+
+     <input type="number" placeholder="  Enter sample area" id="areasample">
+     <input type="number" placeholder="  Enter std area"  id="areastd">
+     <br/>
+    <input type="number" placeholder="  Enter weight std" id="wtstd">
+    <input type="number" placeholder="  Enter std dil dv100" id="stddildv">
+    <br/>
+
+   <input type="number" placeholder="  std forther dil nv5" id="stdfortherdilnv">
+    <input type="number" placeholder="  std forther dil dv25" id="stdfortherdildv">
+    <br/>
+ <input type="number" placeholder="    sample  dil nv900" id="sampledilnv">
+    <input type="number" placeholder="No of tablets or smpwt" id="samplewt">
+    <br/>
+ <input type="number" placeholder="sample forther dil nv25" id="samplefortherdilnv">
+    <input type="number" placeholder="sample forther dil dv5" id="samplefortherdildv">
+    <br/>
+ <input type="number" placeholder="Enter std purity "  id="purity">
+    <input type="number" placeholder=" Enter std purity dv100" id="stdpuritydv100">
+    <br/>
+ <input type="number" placeholder="Enter finalvalue100" id="finalvalue100">
+ <input type="number" placeholder="Enter label claim" id="lableclaim">
+    <br/>
+
+
+
+ 
+     <button onclick="answer()">Calculate</button>
+
+
+     
+
+    <p>Disso Value: <span id="output_1"></span></p>
+
+  </div>
+
+<script>
+ 
+  function answer(){
+    var samplearea_input=parseFloat(document.getElementById("areasample").value);
+    var stdarea_input=parseFloat(document.getElementById("areastd").value);
+
+    var stdwt_input=parseFloat(document.getElementById("wtstd").value);
+    var stddilutiondv_input=parseFloat(document.getElementById("stddildv").value);
+
+    var stdfortherdilnv_input=parseFloat(document.getElementById("stdfortherdilnv").value);
+    var stdfortherdildv_input=parseFloat(document.getElementById("stdfortherdildv").value);
+
+   var sampledilnv_input=parseFloat(document. getElementById("sampledilnv").value);
+   var samplewt_input=parseFloat(document. getElementById("samplewt").value);
+
+    var samplefortherdilnv_input=parseFloat(document. getElementById("samplefortherdilnv").value);
+    var samplefortherdildv_input=parseFloat(document. getElementById("samplefortherdildv").value);
+
+    var purity_input=parseFloat(document.getElementById("purity").value);
+    var purityvaluedv100_input=parseFloat(document.getElementById("stdpuritydv100").value);
+
+    var finalvalue100_input=parseFloat(document. getElementById("finalvalue100").value);
+    var lableclaim_input=parseFloat(document. getElementById("lableclaim").value);
+
+    
+
+
+   var allnum=samplearea_input*stdwt_input*stdfortherdilnv_input*sampledilnv_input*samplefortherdilnv_input*purity_input*finalvalue100_input;
+
+   var alldnom=stdarea_input*stddilutiondv_input*stdfortherdildv_input*samplewt_input*samplefortherdildv_input*purityvaluedv100_input*lableclaim_input;
+
+     
+   var disso=allnum/alldnom;
+
+   
+   
+   document.getElementById("output_1").  innerHTML = disso;
+ 
+
+ }
+
+</script> 
+</body>
+</html>
